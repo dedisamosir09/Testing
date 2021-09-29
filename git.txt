@@ -4,7 +4,7 @@ Jenis :
 1. Local Version Control : local computer / tidak di cloud
 2. Centraliszed Version control : bisa colaborasi/ disimpah di server
 - DI laptop hanya tersimpan versi terkahir
-- Versi sebelumnya hanya bisa di lihat di server / online
+- Versi sebelumnya hanya bisa di lihat di server / online ok
 cth : subversion
 3. Distributed Version Control
 - Seluruh riwayt revisi di copy ke local computer kita
