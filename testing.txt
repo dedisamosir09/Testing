@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  Version control System : Mengetahui perubahan yang terjadi anatr revisi document dan jika sewaktu-waktu kita perlu menggunakan revisi yang sebelumnya kita bisa menggunakan dengan mudah
 
 Jenis : 
@@ -148,3 +149,155 @@ cth : dedt.txt,
 25. Cek file
 - ls -l
 
+=======
+ Version control System : Mengetahui perubahan yang terjadi anatr revisi document dan jika sewaktu-waktu kita perlu menggunakan revisi yang sebelumnya kita bisa menggunakan dengan mudah
+
+Jenis : 
+1. Local Version Control : local computer / tidak di cloud
+2. Centraliszed Version control : bisa colaborasi/ disimpah di server
+- DI laptop hanya tersimpan versi terkahir
+- Versi sebelumnya hanya bisa di lihat di server / online ok
+cth : subversion
+3. Distributed Version Control
+- Seluruh riwayt revisi di copy ke local computer kita
+- Jadi walaupun offline bisa cek riwayt dan lihat history file
+- Disini ada server, di dalamnya ada file full version, dia akan melakuakn mirror semua datanya ke komputer teman kita, data akan di download semuanay full bcak up
+- Perubahan bisa dilakukan di local komputer dulu baru di sink ulang ke erver git hubnya
+-  Misalnya nnti ketika si a mengirimkan data perubahan ke server , maka si komputer b bisa mendowload data perubahan nnya
+cth : git
+
+
+- Cek version git : git --version
+Cara Memakai : 
+1. Configuration
+- git config --global user.name "dedisamosir09"
+- git config --global user.email "dedisamosir09@gmail.com"
+Cek Config
+$ git config --list
+
+2. Repository : Project di Git
+- Buat satu folder dan buat jad git repository
+- git init, dilakukan dalam folder bya
+- git status : cek perubahan yg terjadi
+
+3. Workflow
+* Proses:
+- modified : modifikasi, namun belum di simpan secara permanen ke repository
+- staged :  menandai modifikasi file yang akan di simpan ke repository, file bisa di pilih mana yang akan di simpan 
+- commited : data sudah aman di simpan ke repository
+
+4. Snapshot : versi
+- setiap snapshot akan menghasilan hash sebagai identitasnya untuk menghitung perubahan
+
+5. Menambah FILE
+- Buat file
+- git status
+- Pindahkan ke Staging Index : 
+> git add test.txt (satu")
+> git add test.txt testing.txt
+> git add . (semua)
+- Pindahkan ke Reposiotry secara permanen : git commit -m "keterangan"
+
+6. Mengubah file
+- lakukan perubahan
+- git status
+- git diff
+
+7. Delete FIle
+- Hapus file di working directory
+- git status
+- git add filedihapus.txt
+- git commit -m "hapus"
+
+8. Membatalkan penambahan perubahan (di working directory)
+- bisa hapus langsung
+- atau git clean -f
+
+9. Membatalkan perubahan/penghapusan file (di working directory)
+- git restore namafile
+- Ubah isi file
+- git status
+- git restore file.txt
+
+10. Membatalkan dari staging index
+- git restore --staged namafile
+
+11. Yang sudah terlanjur di commit
+- Tidak bisa restore, hanya bisa 
+> Rollbcak dan Reset
+
+12. Commit log
+- riwayat commit
+- git log : semua history
+- git log --oneline : log meesage saja tidak ada autor
+
+13. Graph
+- melihat commit log debgan hubungannya dengan commit log sebelumnya
+-git log --oneline --graph
+
+14. Lihat Detail Commit
+- git show hash > git show 2471284
+
+15. Membandingkan history commit
+- git diff hash1 HEAD : satu commit
+- git diff hash1 hash2 : git diff 1239821 12313
+
+16. Melihat isi perubahan (hanya bisa di VC Code)
+- git difftoll hash HEAD : git difftool 84924 HEAD
+- git difftoll hash hash2: git difftool 84924 24627
+
+17. Rename File
+- akan terdeksi sebagai delete
+- git add filelama.txt
+- git add filebaru.txt
+- git status
+- git commit -m "rename"
+
+18. Reset commit
+- Membatalkan perubahan yg sudah terlanjut commit
+- Resiko : jika reset dilakukan di tengah", maka commi setelahnya akan terhapus juga
+-Jenis mode :
+> Soft : repository ke reset tp working dan staging index tidak
+> Mixed (default) : yang di ubah repository dan staging index
+> Hard : semua di ubah / direset
+- Reset : git reset  --soft 821712
+- Membatalakn reset kembali ke awal: git reset --soft hashAwal
+
+19. Amend commit
+- Mengatasi hal" yang terlupakan setetlah melakukan commit tanpa melakukan reset soft ke  commit sebelumnya, tanpa melakukan commit baru
+> git commit --amend -m "Menambha baris baru"
+> akan melakukan merge dengan commit sebelumnya
+
+20. Cek Versi Sebelumnya 
+- git checkout hash -- namafile
+- git restore --staged namafile
+- git restore namafile
+
+21. Cek Sbapshot sebelumnya 
+- git checkout hash
+> untuk kembali sprti semula : git checkout hash(akhir)
+
+
+22. Revert Commit (yang lebih aman dr pada reset)
+- Membuat commit baru  tanpa menghapus commit laiinya
+- git revert hash
+  
+
+23. Ignore
+- Mnegabaikan hal" tidak penting
+- tambahkan file .gitignore di repository
+- lalu tambahkan tiap baris pada file .gitinore berisikan file/folder yang tidak akan di track
+cth : dedt.txt, 
+- git add .gitignore
+- git commit -m "tambah"
+
+
+24. Blame
+- mencari tahu siapa yang menambah file dan apa perubahannya
+- git blame namafile
+- git show hashnya
+
+25. Cek file
+- ls -l
+
+>>>>>>> e22585114c8f0259ff4b9ef772ef58f903379160
